@@ -19,7 +19,6 @@ import time
 import cv2
 import serial
 import binascii
-import QboCmd
 import sys
 import time
 
