@@ -234,7 +234,7 @@ def guardar_historial(archivo):
         for entry in chat_history:
             role = entry["role"]
             text = entry["parts"][0]["text"]
-            file.write(f"{role}: {text}\n")
+            file.write(role + ":" + text + "\n")
 
 def leer_historial(archivo):
     with open(archivo, 'r', encoding='utf-8') as file:
