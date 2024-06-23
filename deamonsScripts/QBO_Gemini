@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Busca un proceso específico
+DATO=$(ps -aux | grep -v grep | grep PiGemini.py)
+if [ -z "$DATO" ]; then
+        EXISTE=false
+else
+        EXISTE=true
+fi
+
+START="start"
+STOP="stop"
+
+# start PiCmd
+if [ "$1" = "$START" ]; then
+        if [ "$EXISTE" = true ]; then
+                echo "PiGemini.py is already running"
+        else
+                echo "launching PiFaceFast"
+                /home/pi/Documents/Python\ projects/PiGemini.py &
+        fi
+fi
+
+# stop PiCmd
+if [ "$1" = "$STOP" ]; then
+        if [ "$EXISTE" = true ]; then
+                kill -9 $(ps -ef | grep -v grep | grep PiGemini.py | awk '{print $2}')
+                echo "PiGemini stopped"
+        else
+                echo "PiGemini was not running"
+        fi
+fi
+

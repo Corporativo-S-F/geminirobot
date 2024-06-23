@@ -1,0 +1,2 @@
+user: no me gustan
+model: ¿Que es lo que no te gusta? Tal vez pueda ayudarte a encontrar algo que si te agrade.  
