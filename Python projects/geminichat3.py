@@ -10,7 +10,6 @@ import speech_recognition as sr
 import subprocess
 import pipes
 import json
-import apiai
 import time
 import yaml
 import os
@@ -33,7 +32,6 @@ class QBOtalk:
 #        CLIENT_ACCESS_TOKEN = 'YOUR_TOKEN'
         # obtain audio from the microphone
         self.r = sr.Recognizer()
-        self.ai = apiai.ApiAI(CLIENT_ACCESS_TOKEN)
         self.Response = "hello"
         self.GetResponse = False
         self.GetAudio = False
